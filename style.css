@@ -1,99 +1,219 @@
-/* Basic Reset */
+/* Importação de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
-/* Body and Font Styling */
+/* Estilo do Corpo e Tipografia */
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 2.0;
-    background-color: #7ed9d9; /* Define a cor de fundo do body */
-    color: #0505A5;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Fundo Cinza Claro Suave */
+    color: #333; /* Texto Principal Escuro */
     padding: 20px;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
 }
 
-.color2 {
-    background-color: #20589b;
+/* Container principal (para responsividade) */
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 40px;
 }
 
-.color3 {
-    background-color: #2ba2c8;
+/* Cores da Paleta (para referência) */
+:root {
+    --primary-color: #007bff; /* Azul Profissional */
+    --secondary-color: #6c757d; /* Cinza Secundário */
+    --text-color: #333;
+    --background-light: #f4f7f6;
+    --section-bg: #e9ecef; /* Cinza para fundo de listas */
 }
 
-.color4 {
-    background-color: #2bc6c8;
+/* Estilo do Link */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.color5 {
-    background-color: #7ed9d9;
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
-/* Profile Photo Styling */
+/* Foto de Perfil */
 .profile-photo {
     display: block;
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styling */
+/* Estilo do Cabeçalho */
 header {
     text-align: center;
-    margin-bottom: 20px;
-    
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 10px;
 }
 
-/* Section Styling */
+/* Estilo da Seção */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 15px 0;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #0505A5;
-    border-bottom: 2px solid #0505a5;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
 }
 
-/* List Styling */
+/* Estilo da Lista (Experiência, Educação, Hobbies, etc.) */
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 ul li {
-    background: #b9d2d8;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: var(--background-light); /* Cor de fundo mais suave */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color); /* Destaque na lateral */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Footer Styling */
+ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+ul li strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Estilo do Formulário de Contato */
+#contact-form form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#contact-form label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact-form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do Rodapé */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #0D9CFA;
+    background-color: var(--primary-color);
     color: #fff;
-    margin-top: 20px;
-    border-radius: 5px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 footer a {
-    color: ##1a717c;
-    text-decoration: bold;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 5px;
+    text-decoration: none;
 }
 
 footer a:hover {
+    color: #ddd;
     text-decoration: underline;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
 }
